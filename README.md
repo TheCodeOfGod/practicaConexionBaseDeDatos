@@ -50,8 +50,9 @@ values
         
         select * from lugares;
         
+use conexion_prueba;
 
-SELECT l.*, c.nombre_categoria 
-FROM lugares l
-JOIN categorias c ON l.fk_categoria = c.id_categoria
-WHERE l.fk_categoria = (select fk_categoria from lugares where id_lugar= 1) and l.id_lugar != 1;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+
+Nota: Para no usar mysql2 use el comando anterior despues de la insercion de datos para que pudiera funcionar la conexion con la base de datos. Asi ya debe de funcionar perfectamente esta practica.
